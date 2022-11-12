@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         int num2=Integer.parseInt(valor2);
         int suma=num1+num2;
         String result= String.valueOf(suma);
-        tv1.setText("El resultado es " + result);
+        tv1.setText("Result is " + result);
     }
 
     public void Multiplicar(View view){
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         int num2=Integer.parseInt(valor2);
         int multiplicar=num1*num2;
         String result= String.valueOf(multiplicar);
-        tv1.setText("El resultado es " + result);
+        tv1.setText("Result is " + result);
     }
 
     public void Promedio(View view){
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         int num2=Integer.parseInt(valor2);
         int promedio=(num1+num2)/2;
         String result= String.valueOf(promedio);
-        tv1.setText("El resultado es " + result);
+        tv1.setText("Result is " + result);
     }
 
     public void Restar(View view){
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         int num2=Integer.parseInt(valor2);
         int restar=(num1-num2);
         String result= String.valueOf(restar);
-        tv1.setText("El resultado es " + result);
+        tv1.setText("Result is" + result);
     }
 
     public void Dividir(View view){
@@ -79,12 +79,12 @@ public class MainActivity extends AppCompatActivity {
         float num2=Integer.parseInt(valor2);
         float dividir = 0;
         if(num2 == 0){
-            tv1.setText("No se puede dividir por cero");
+            tv1.setText("You can not divide by Zero");
         }
         else {
             dividir = (num1 / num2);
             String result= String.valueOf(dividir);
-            tv1.setText("El resultado es " + result);
+            tv1.setText("Result is " + result);
                 }
 
     }
