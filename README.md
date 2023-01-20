@@ -1,5 +1,5 @@
 # SimpleCalculator
-This simple calculator, is made based in a simple activity, constraint layout and some Java code to manage arithmetic operations
+This simple calculator, is made based in a simple activity, constraint layout and some Kotlin/Java code to manage arithmetic operations
 Only a conditional to manage the zero division
 
 I hope this wil be helpfull to you
