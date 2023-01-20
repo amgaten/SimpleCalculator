@@ -1,94 +1,76 @@
-package com.ebu.simplecalculator;
+package com.ebu.simplecalculator
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
+import android.os.Bundle
+import android.view.View
+import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-
-public class MainActivity extends AppCompatActivity {
-
-    private EditText et1;
-    private EditText et2;
-    private TextView tv1;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        et1=(EditText)findViewById(R.id.txt_num1);
-        et2=(EditText)findViewById(R.id.txt_num2);
-        tv1=(TextView)findViewById(R.id.txt_resultado);
+class MainActivity : AppCompatActivity() {
+    private var et1: EditText? = null
+    private var et2: EditText? = null
+    private var tv1: TextView? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        et1 = findViewById<View>(R.id.txt_num1) as EditText
+        et2 = findViewById<View>(R.id.txt_num2) as EditText
+        tv1 = findViewById<View>(R.id.txt_resultado) as TextView
     }
 
     //Realiza la suma
-    public void Sumar(View view){
-        String valor1=et1.getText().toString();
-        String valor2=et2.getText().toString();
-
-        int num1=Integer.parseInt(valor1);
-        int num2=Integer.parseInt(valor2);
-        int suma=num1+num2;
-        String result= String.valueOf(suma);
-        tv1.setText("Result is " + result);
+    fun Sumar(view: View?) {
+        val valor1 = et1!!.text.toString()
+        val valor2 = et2!!.text.toString()
+        val num1 = valor1.toInt()
+        val num2 = valor2.toInt()
+        val suma = num1 + num2
+        val result = suma.toString()
+        tv1!!.text = "Result is $result"
     }
 
-    public void Multiplicar(View view){
-        String valor1=et1.getText().toString();
-        String valor2=et2.getText().toString();
-
-        int num1=Integer.parseInt(valor1);
-        int num2=Integer.parseInt(valor2);
-        int multiplicar=num1*num2;
-        String result= String.valueOf(multiplicar);
-        tv1.setText("Result is " + result);
+    fun Multiplicar(view: View?) {
+        val valor1 = et1!!.text.toString()
+        val valor2 = et2!!.text.toString()
+        val num1 = valor1.toInt()
+        val num2 = valor2.toInt()
+        val multiplicar = num1 * num2
+        val result = multiplicar.toString()
+        tv1!!.text = "Result is $result"
     }
 
-    public void Promedio(View view){
-        String valor1=et1.getText().toString();
-        String valor2=et2.getText().toString();
-
-        int num1=Integer.parseInt(valor1);
-        int num2=Integer.parseInt(valor2);
-        int promedio=(num1+num2)/2;
-        String result= String.valueOf(promedio);
-        tv1.setText("Result is " + result);
+    fun Promedio(view: View?) {
+        val valor1 = et1!!.text.toString()
+        val valor2 = et2!!.text.toString()
+        val num1 = valor1.toInt()
+        val num2 = valor2.toInt()
+        val promedio = (num1 + num2) / 2
+        val result = promedio.toString()
+        tv1!!.text = "Result is $result"
     }
 
-    public void Restar(View view){
-        String valor1=et1.getText().toString();
-        String valor2=et2.getText().toString();
-
-        int num1=Integer.parseInt(valor1);
-        int num2=Integer.parseInt(valor2);
-        int restar=(num1-num2);
-        String result= String.valueOf(restar);
-        tv1.setText("Result is" + result);
+    fun Restar(view: View?) {
+        val valor1 = et1!!.text.toString()
+        val valor2 = et2!!.text.toString()
+        val num1 = valor1.toInt()
+        val num2 = valor2.toInt()
+        val restar = num1 - num2
+        val result = restar.toString()
+        tv1!!.text = "Result is$result"
     }
 
-    public void Dividir(View view){
-        String valor1=et1.getText().toString();
-        String valor2=et2.getText().toString();
-
-        float num1=Integer.parseInt(valor1);
-        float num2=Integer.parseInt(valor2);
-        float dividir = 0;
-        if(num2 == 0){
-            tv1.setText("You can not divide by Zero");
+    fun Dividir(view: View?) {
+        val valor1 = et1!!.text.toString()
+        val valor2 = et2!!.text.toString()
+        val num1 = valor1.toInt().toFloat()
+        val num2 = valor2.toInt().toFloat()
+        var dividir = 0f
+        if (num2 == 0f) {
+            tv1!!.text = "You can not divide by Zero"
+        } else {
+            dividir = num1 / num2
+            val result = dividir.toString()
+            tv1!!.text = "Result is $result"
         }
-        else {
-            dividir = (num1 / num2);
-            String result= String.valueOf(dividir);
-            tv1.setText("Result is " + result);
-                }
-
     }
-
-
-
 }
